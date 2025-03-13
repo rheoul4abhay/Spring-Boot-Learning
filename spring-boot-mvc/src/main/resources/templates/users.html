@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User List</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>User List</h1>
+    <ul>
+        <li th:each="user : ${users}">
+            <span th:text="${user.name}"></span> -
+            <span th:text="${user.age}"></span> years old
+        </li>
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>
