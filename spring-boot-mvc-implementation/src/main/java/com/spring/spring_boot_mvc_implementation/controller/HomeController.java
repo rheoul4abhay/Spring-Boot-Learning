@@ -15,11 +15,9 @@ public class HomeController {
     }
 
     @RequestMapping("/add")
-    public ModelAndView add(@RequestParam("num1") int a, @RequestParam("num2") int b){
-        ModelAndView mv = new ModelAndView("result");
+    public String add(@RequestParam("num1") int a, @RequestParam("num2") int b, Model model){
         int num3 = a + b;
-        mv.addObject("num3", num3);
-
-        return mv;
+        model.addAttribute("num3", num3);
+        return "result";
     }
 }
